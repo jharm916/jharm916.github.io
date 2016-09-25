@@ -6,7 +6,7 @@
     var screen_width = screen.width;
     var screen_height = screen.height;
     var logo_width = 155;
-    var logo_height = 100;
+    var logo_height = screen.width / 3;
 </script>
 <head>
     <title>Chesapeak</title>
@@ -32,7 +32,7 @@
     </style>
 </head>
 <body>
-    <form runat="server">
+    <div id="wrapper">
         <!--
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -55,79 +55,49 @@
         </asp:ScriptManager>
         -->
 
-        <header style="position: relative;">
-            <!-- nav bar in the header -->
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container-fluid">
-                    <a class="pull-left">
-                        <img src="/Images/chesapeak_logo.jpg" alt="Chesapeak Music" onload="this.width=screen_width; this.height=logo_height;" />
-                    </a>
-                    <ul class="nav navbar-nav">
-                        <li><a href="/Home">Home</a></li>
-                        <li><a href="/Contact">Contact Us</a></li>
-                    </ul>
-                    <div>
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <AnonymousTemplate>
-                                <ul class="nav navbar-nav navbar-right" style="position: relative; right: 0px;">
-                                    <li><a runat="server" href="~/Home">Home</a></li>
-                                    <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                                </ul>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                    <li>
-                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                    </li>
-                                </ul>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
-                    </div>
-                </div>
-            </nav> <!-- end nav bar -->
-        </header>
-        <div id="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
-            <!-- body content implemented by pages using this master page -->
-        </div>
-    </form>
-    <!-- footer content -->
-    <div class="footer">
-        <hr class="intro-divider">
-        <!-- Social Media Links -->
-        <p>Follow Chesapeak on Social Media</p>
-        <div style="display:inline-block; margin: 0 auto;">
-            <a href="https://twitter.com/ChesapeakMusic"> 
-                <img border="0" alt="Follow us on Twitter!" src="/Images/Twitter_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
-            </a>
-        </div>
-        <div style="display:inline-block; margin: 0 auto;">
-            <a href="https://www.facebook.com/chesapeakmusic"> 
-                <img border="0" alt="Visit our Facebook Page!" src="/Images/Facebook_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
-            </a>
-        </div>
+        <div id="header">
 
-        <div style="display:inline-block; margin: 0 auto;">
-            <a href="https://soundcloud.com/porterbay"> 
-                <img border="0" alt="Listen to Porter Bay on SoundCloud!" src="/Images/Soundcloud_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
-            </a>
-        </div>
+        </div> <!-- end header -->
 
-        <div style="display:inline-block; margin: 0 auto;">
-            <a href="https://www.youtube.com/channel/UCeJEOCKTF4BT5GYENaNDehA"> 
-                <img border="0" alt="Visit our Youtube Channel!" src="/Images/Youtube_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
-            </a>
-        </div>
+        <div id="content">
+            
+        </div> <!-- end conent -->
 
-        <div style="display:inline-block; margin: 0 auto;">
-            <a href="https://instagram.com/chesapeakmusic/"> 
-                <img border="0" alt="Follow us on Instagram!" src="/Images/Instagram_logo.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
-            </a>
-        </div>
-        <!-- Copyright -->
-        <p> Copyright 2016 - Chesapeak Music</p>
-    </div>
-</body>
+        <!-- footer content -->
+        <div id="footer">
+            <hr class="intro-divider">
+            <!-- Social Media Links -->
+            <p>Follow Chesapeak on Social Media:</p>
+            <div style="display:inline-block; margin: 0 auto;">
+                <a href="https://twitter.com/ChesapeakMusic"> 
+                    <img border="0" alt="Follow us on Twitter!" src="/Images/Twitter_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
+                </a>
+            </div>
+            <div style="display:inline-block; margin: 0 auto;">
+                <a href="https://www.facebook.com/chesapeakmusic"> 
+                    <img border="0" alt="Visit our Facebook Page!" src="/Images/Facebook_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
+                </a>
+            </div>
+
+            <div style="display:inline-block; margin: 0 auto;">
+                <a href="https://soundcloud.com/porterbay"> 
+                    <img border="0" alt="Listen to Porter Bay on SoundCloud!" src="/Images/Soundcloud_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
+                </a>
+            </div>
+
+            <div style="display:inline-block; margin: 0 auto;">
+                <a href="https://www.youtube.com/channel/UCeJEOCKTF4BT5GYENaNDehA"> 
+                    <img border="0" alt="Visit our Youtube Channel!" src="/Images/Youtube_logo_black.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
+                </a>
+            </div>
+
+            <div style="display:inline-block; margin: 0 auto;">
+                <a href="https://instagram.com/chesapeakmusic/"> 
+                    <img border="0" alt="Follow us on Instagram!" src="/Images/Instagram_logo.jpg" onload="this.width=social_image_size; this.height=social_image_size;" />
+                </a>
+            </div>
+            <!-- Copyright -->
+            <p> Copyright 2016 - Chesapeak Music</p>
+        </div> <!-- end footer --> 
+    </body>
 </html>
