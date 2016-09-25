@@ -2,11 +2,11 @@
 <html>
 <!-- js variables -->
 <script>
-    var logo_width = 155;
-    var logo_height = 55;
     var social_image_size = 59.06;
     var screen_width = screen.width;
     var screen_height = screen.height;
+    var logo_width = 155;
+    var logo_height = 100;
 </script>
 <head>
     <title>Chesapeak</title>
@@ -33,9 +33,9 @@
 </head>
 <body>
     <form runat="server">
+        <!--
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
@@ -53,13 +53,14 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        -->
 
         <header style="position: relative;">
             <!-- nav bar in the header -->
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <a class="pull-left">
-                        <img src="/Images/chesapeak_logo.jpg" alt="Chesapeak Music" onload="this.width=logo_width; this.height=logo_height;" />
+                        <img src="/Images/chesapeak_logo.jpg" alt="Chesapeak Music" onload="this.width=screen_width; this.height=logo_height;" />
                     </a>
                     <ul class="nav navbar-nav">
                         <li><a href="/Home">Home</a></li>
@@ -126,7 +127,7 @@
             </a>
         </div>
         <!-- Copyright -->
-        <p> &copy; <%: DateTime.Now.Year %> - Chesapeak Music</p>
+        <p> Copyright 2016 - Chesapeak Music</p>
     </div>
 </body>
 </html>
